@@ -1,0 +1,227 @@
+/* ==================== css tampilan member ============================ */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700;
+    margin: 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.slider img {
+    width: 100%;
+}
+
+.mengapa {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #fff;
+}
+
+.mengapa h1 {
+    font-size: 22px;
+}
+
+.mengapa h2 {
+    font-size: 16px;
+}
+
+.paket {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #f8f8f8;
+}
+
+.paket h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.paket .caption {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px,1px,1px,0px #ddd;
+}
+
+.paket .caption h2 {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.paket img:hover {
+    opacity: 0.8;
+}
+
+.blog {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #fff;
+}
+
+.blog h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* =========================== css tampilan login =========================== */
+
+/* ================================= Navbar ======================================= */
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-default {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+.logo-brand {
+    width: 60px;
+    max-width: 100%;
+    margin-top: -10px;
+    color: #fff;
+}
+
+
+/* =========================== css tampilan form login =========================== */
+
+.box {
+    background-color:lightblue;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.form-login {
+    position: relative;
+    /* top: 40%; */
+    /* transform: translateY(-40%); */
+    /* margin-top: 10%; */
+    margin-top: 15%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 40px;
+}
+
+.bg-img {
+        /* background : url('assets/image/slider/1.jpg') center; */
+    /* background-size: cover; */
+	max-height: 100%;
+}
+
+.box .image-kiri {
+    text-align: center;
+    height: 100%;
+}
+
+/* .box img {
+    display: inline-block;
+    width: 400px;
+    max-width: 100%;
+    position: relative;
+    top: 35%;
+    transform: translateY(-35%);
+} */
+
+/*col kanan hanya untuk button */
+.box .col-kanan {
+    text-align: center;
+    height: 100%;
+}
+
+
+.box .form-control:focus {
+    box-shadow: 0 0 10px #222;
+    border: 1px solid #222;
+}
+
+.box .form-group {
+    margin-bottom: 20px;
+}
+
+.form-group .lupa-pass {
+    color: #222;
+    font-weight: 600;
+	text-decoration: none;
+}
+
+.form-group .lupa-pass:hover {
+    color: #666;
+}
+
+.btn.btn-hitam {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn.btn-hitam:hover {
+    background-color: #333;
+}
+
+a.btn.btn-hitam {
+    padding: 5px 10px;
+    margin-top: 10px;
+
+}
+
+.navbar-default .navbar-nav > li > a.btn.btn-hitam {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a.btn.btn-hitam:hover {
+    background-color: #555;
+}
+
+/* REGISTRASI */
+.jdl-regis h3 {
+    text-align: center;
+}
+
+.box-regis {
+    background-color:lightblue;
+    position: absolute;
+    height: auto;
+    width: 100%;
+}
+
+.form-regis {
+	margin-top: 10%;
+	margin-right: 20%;
+	margin-left: 20%;
+	margin-bottom: 10%;
+	padding: 30px;
+	align-items: center;
+}
+
+/*LOGIN*/
+
+#login {
+    padding: 5px 10px;
+    margin: 10px 5px 0;
+    border: 1px solid #222;
+    border-radius: 5px;
+}
+
+#login:hover {
+    background-color: #222;
+    color: #fff;
+}
