@@ -1,5 +1,5 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right !important;">
-	<span >Data Paket</span>
+	<span>Data Paket Foto</span>
 </div>
 </div>
 </nav>
@@ -26,14 +26,12 @@
 					<a href="<?php echo base_url("admin/paket/tampil_edit_paket/$value[id_paket]")?>" class="btn btn-warning btn-xs">Edit</a>
 					<a href="<?php echo base_url("admin/paket/hapus/$value[id_paket]") ?>" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
 				</td>
-			</tr>
-			
+			</tr>	
 		<?php endforeach ?>
 	</tbody>
 </table>
 
 <a href="<?php echo base_url("admin/paket/tambah_paket")?>" class="btn btn-primary">Tambah</a>
-
 </div>
 
 

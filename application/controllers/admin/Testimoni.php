@@ -24,7 +24,15 @@ class Testimoni extends CI_Controller {
 		$this->db->update('testimoni', $status);
 		redirect('admin/testimoni','refresh');
 	}
-
+	function Ditolak($id_testimoni)
+	{
+		$status['status_testimoni']="Ditolak";
+		$this->db->where('id_testimoni', $id_testimoni);
+		$this->db->update('testimoni', $status);
+		redirect('admin/testimoni','refresh');
+	}
+		
+	
 }
 
 /* End of file Home.php */

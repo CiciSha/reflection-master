@@ -1,5 +1,4 @@
-
-<div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right !important;"> <span >Edit Detail Paket</span>
+<div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right !important;"> <span>Edit Detail Paket</span>
 </div>
 </div>
 </nav>

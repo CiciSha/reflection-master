@@ -29,58 +29,57 @@
    <nav id="sidebar">
     <div class="p-4 pt-5">
       <img class="img logo rounded-circle mb-5" src="<?php echo base_url("./assets/image/pic.png") ?>">
-
       <ul class="list-unstyled components mb-5">
-
         <li class="active">
          <a href="<?php echo base_url ("admin/home") ?>">Beranda</a>
-       </li>
-
-       <li>
+        </li>
+        <li>
          <a href="<?php echo base_url ("admin/member") ?>">Member</a>
-       </li>
-
-       <li>
-        <a href="<?php echo base_url ("admin/paket") ?>">Paket</a>
-      </li>
-
-      <li>
-        <a href="<?php echo base_url ("admin/portofolio") ?>">Portofolio</a>
-      </li>
-
-      <li>
-        <a href="<?php echo base_url ("admin/Pemesanan") ?>">Pemesanan</a>
-      </li>
-      <li>
-        <a href="<?php echo base_url ("admin/laporan/harian") ?>">Laporan Harian</a>
-      </li>
-      <li>
-        <a href="<?php echo base_url ("admin/laporan/mingguan") ?>">Laporan Mingguan</a>
-      </li>
-      <li>
-        <a href="<?php echo base_url ("admin/laporan/bulanan") ?>">Laporan Bulanan</a>
-      </li>
-      <li>
-        <a href="<?php echo base_url ("admin/laporan/tahunan") ?>">Laporan Tahunan</a>
-      </li>
-      <li>
-        <a href="<?php echo base_url ("admin/studio") ?>">Studio</a>
-      </li>
-      <li>
-        <a href="<?php echo base_url ("admin/testimoni") ?>">Testimoni</a>
-      </li>
-      <li>
-        <a href="<?php echo base_url ("admin/pengaturan") ?>">Pengaturan</a>
-      </li>
-      <li>  
-        <a href="<?php echo base_url ("admin/pengaturan/ubah_password") ?>">Ubah Password</a>
-      </li>
-      <li>
-        <a href="<?php echo base_url ("admin/home/logout") ?>">Logout</a>
-      </li>
-
-    </ul>
-  </div>
+        </li>
+        <li>
+          <a href="<?php echo base_url ("admin/paket") ?>">Paket</a>
+        </li>
+        <li>
+          <a href="<?php echo base_url ("admin/portofolio") ?>">Portofolio</a>
+        </li>
+      <nav class="navbar navbar-expand-lg d-print-none" style="background: #1d1919;">
+        <a href="" style="color: #d2d1d1">Laporan</a>
+        <button  type="button" class="navbar-toggler" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </a>
+              <div class="dropdown-menu" style="padding: 10px">
+               <a class="dropdown-item" style="color: #1d1919" href="<?php echo base_url("admin/laporan/harian") ?>">Laporan Harian</a>
+               <a class="dropdown-item" style="color: #1d1919" href="<?php echo base_url("admin/laporan/mingguan") ?>">Laporan Mingguan</a>
+               <a class="dropdown-item" style="color: #1d1919" href="<?php echo base_url("admin/laporan/bulanan") ?>">Laporan Bulanan</a>
+               <a class="dropdown-item" style="color: #1d1919" href="<?php echo base_url("admin/laporan/tahunan") ?>">Laporan Tahunan</a>
+             </div>  
+           </li>
+         </ul>
+       </div>
+     </nav>
+     <li><a href="<?php echo base_url ("admin/Pemesanan") ?>">Pemesanan </a></li>
+     <li>
+      <a href="<?php echo base_url ("admin/studio") ?>">Studio</a>
+    </li>
+    <li>
+      <a href="<?php echo base_url ("admin/testimoni") ?>">Testimoni</a>
+    </li>
+    <li>
+      <a href="<?php echo base_url ("admin/pengaturan") ?>">Pengaturan</a>
+    </li>
+    <li>  
+      <a href="<?php echo base_url ("admin/pengaturan/ubah_password") ?>">Ubah Password</a>
+    </li>
+    <li>
+      <a href="<?php echo base_url ("admin/home/logout") ?>">Logout</a>
+    </li>
+  </ul>
+</div>
 </nav>
 
 <!-- Page Content  -->
@@ -91,4 +90,3 @@
      <span class="sr-only">Toggle Menu</span>
    </button>
    <div class="container">
-

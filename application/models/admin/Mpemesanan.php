@@ -90,8 +90,8 @@ class Mpemesanan extends CI_Model {
 				'verify_peer' => false,
 				'verify_peer_name' => false,
 				'allow_self_signed' => true
-				)
-			);
+			)
+		);
 
 		$mail->Host = "smtp.gmail.com";
 		$mail->SMTPDebug = 0; 
@@ -99,8 +99,8 @@ class Mpemesanan extends CI_Model {
 		$mail->SMTPSecure = "tls"; 
 		$mail->Host = "smtp.gmail.com"; 
 		$mail->Port = 587; 
-		$mail->Username = "ardhiaamalia29@gmail.com"; 
-		$mail->Password = "ardhiaamalia012999"; 
+		$mail->Username = "harya.sriharyati07@gmail.com"; 
+		$mail->Password = "7Januari1997"; 
 
 		$mail->SetFrom("ardhiaamalia29@gmail.com", 'Reflection Photography');
 
@@ -185,10 +185,12 @@ class Mpemesanan extends CI_Model {
 	}
 	function hitung_pemesanan($id_paket)
 	{
+		$bulan = date("m");
+		$tahun = date("Y");
 		$ambil = $this->db->query("SELECT COUNT(pemesanan.id_tipe_paket) AS jumlah_paket FROM pemesanan
-			LEFT JOIN tipe_paket ON pemesanan.id_tipe_paket=tipe_paket.id_tipe_paket
-			LEFT JOIN paket ON tipe_paket.id_paket=paket.id_paket
-			WHERE tipe_paket.id_paket='$id_paket'");
+		LEFT JOIN tipe_paket ON pemesanan.id_tipe_paket=tipe_paket.id_tipe_paket
+		LEFT JOIN paket ON tipe_paket.id_paket=paket.id_paket
+		WHERE tipe_paket.id_paket='$id_paket' AND MONTH(pemesanan.tanggal_pemesanan)='$bulan' AND YEAR(pemesanan.tanggal_pemesanan)='$tahun'");
 		return $ambil->row_array();
 	}
 

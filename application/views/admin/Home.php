@@ -1,12 +1,10 @@
-<!-- Selamat Datang di Reflection Photography -->
-
 <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-	<span style="text-align: right !important;">Hi Admin!</span>
+	<span style="text-align: right !important;">Grafik Pesanan Member</span>
 </div>
 </div>
 </nav>
 
-<h3 class="mb-4">Selamat Datang di Reflection Photography</h3>
+<h3 class="mb-4" style="text-align: center">Selamat Datang di Reflection Photography</h3>
 <script type="text/javascript">
 	$(function () 
 	{

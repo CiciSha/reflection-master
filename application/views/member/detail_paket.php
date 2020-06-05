@@ -34,14 +34,14 @@
               </div>
               <div class="card-footer text-muted">
                 <?php if (isset($_SESSION['member'])): ?>
-                     <a href="<?php echo base_url("pemesanan/paket/$value[id_tipe_paket]") ?>" class="btn btn-primary rounded">Pesan</a> 
+                     <a href="<?php echo base_url("member/paket/$value[id_tipe_paket]") ?>" class="btn btn-primary rounded">Pesan</a> 
                    <?php else: ?>
                     <a onclick="return confirm('Silahkan Lakukan Login!')" href="<?php echo base_url("login") ?>" class="btn btn-primary">Pesan</a> 
                   <?php endif ?>
               </div>
             </div>
 
-              <!-- <div class="image-gradient">
+              <div class="image-gradient">
                 <figure style="align-content: center;">
                   <img src="<?php echo base_url("./assets/image/tipe/$value[foto_tipe_paket]") ?>" alt="" class="img-fluid">
                 </figure>
@@ -63,7 +63,7 @@
                     <a title="Silahkan Login Sebelum Pesan" href="<?php echo base_url("pemesanan/paket/$value[id_tipe_paket]") ?>" class="btn btn-success disabled" disabled="disabled">Pesan</a> 
                   <?php endif ?>
                 </div>
-              </div> -->
+              </div>
             </div>
           <?php endforeach ?>  
         </div>

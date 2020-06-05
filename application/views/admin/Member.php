@@ -1,5 +1,5 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right !important;">
-	<span >Data Member</span>
+	<span>Data Member</span>
 </div>
 </div>
 </nav>

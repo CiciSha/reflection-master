@@ -26,7 +26,7 @@ class Login extends CI_Controller {
 			}
 			elseif ($hasil_login=="gagal") 
 			{
-				echo "<script>alert('Username atau password yang diinputkan salah');</script>";
+				echo "<script>alert('Username atau password yang Anda inputkan salah!');</script>";
 				redirect('login','refresh');
 			}
 		}
