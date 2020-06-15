@@ -262,14 +262,14 @@ class Mpaket extends CI_Model {
 		$mail->SMTPSecure = "tls"; 
 		$mail->Host = "smtp.gmail.com"; 
 		$mail->Port = 587; 
-		$mail->Username = "ardhiaamalia29@gmail.com"; 
-		$mail->Password = "ardhiaamalia012999"; 
+		$mail->Username = "harya.sriharyati07@gmail.com"; 
+		$mail->Password = "7Januari1997"; 
 
-		$mail->SetFrom("ardhiaamalia29@gmail.com", 'Reflection Photography');
+		$mail->SetFrom("harya.sriharyati07@gmail.com", 'Reflection Photography');
 
-		$mail->AddReplyTo("ardhiaamalia29@gmail.com","Reflection Photography");
+		$mail->AddReplyTo("harya.sriharyati07@gmail.com","Reflection Photography");
 
-		$mail->Subject = "Reservasi Member";
+		$mail->Subject = "Detail Pesanan Member";
 
 		$mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; 
 		$mail->MsgHTML($body);

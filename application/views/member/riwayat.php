@@ -31,10 +31,10 @@
 					<td>
 						<?php if ($value['status_pemesanan']=="Selesai"): ?>
 							<?php if ($hasil_testimoni==0): ?>
-								<a href="<?php echo base_url("member/testimoni/$value[id_pemesanan]") ?>" class="btn btn-success">Testimoni</a>
+								<a href="<?php echo base_url("member/testimoni/$value[id_pemesanan]") ?>" class="btn btn-success">Isi Testimoni</a>
 							<?php endif ?>
 						<?php elseif($value['status_pemesanan']!="Selesai" && $value['status_pemesanan']!="Lunas"&&$value['status_pemesanan']!="Menunggu Konfirmasi"&&$value['status_pemesanan']!="Cancel"&&$value['status_pemesanan']!="Proses"): ?>
-							<a href="<?php echo base_url("member/pembayaran/$value[id_pemesanan]") ?>"class="btn btn-info">Pembayaran</a>
+							<a href="<?php echo base_url("member/pembayaran/$value[id_pemesanan]") ?>"class="btn btn-info">Konfirmasi Pembayaran</a>
 						<?php endif ?>
 						<?php if ($kurang_tiga_hari==$hari_ini && $value['status_pemesanan']!="Cancel"): ?>
 							<a href="<?php echo base_url("member/reschedule/$value[id_pemesanan]") ?>" class="btn btn-success btn-xs">Reschedule</a> <br> <br>

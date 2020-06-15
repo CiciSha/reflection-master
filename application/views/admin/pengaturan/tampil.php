@@ -1,4 +1,6 @@
-<div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: right !important;"><span>Pengaturan</span>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: left !important;">
+	<span>Data Pengaturan</span>
 </div>
 </div>
 </nav>

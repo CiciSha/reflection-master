@@ -102,14 +102,23 @@ class Studio extends CI_Controller
 				$this->Mstudio->ubah_detail_studio($input,$id_detail_studio);
 				redirect("admin/studio/tampil_detail_studio/$id_studio",'refresh');
 			}
-			 // TAMBAHAN CICI YANG MASIH EROR
+	
 			$data ['id_studio'] = $data['detail_studio']['id_studio'];
-
-
 			$this->load->view('admin/template/Header');
 			$this->load->view('admin/studio/edit_detail_studio',$data);
 			$this->load->view('admin/template/Footer');
 	}
+	function hapus($id_studio)
+	{
+		$this->Mstudio->hapus_studio($id_studio);
+		redirect('admin/studio','refresh');
+	}
+	function hapus_detail_studio($id_detail_studio)
+	{
+		$this->Mstudio->hapus_detail_studio($id_detail_studio);
+		redirect('admin/studio','refresh');
+	}
+
 
 	
 

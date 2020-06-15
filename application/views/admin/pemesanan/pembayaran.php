@@ -39,7 +39,7 @@ id="navbarSupportedContent"> &nbsp;
 					</td>
 					<td>
 						<?php if ($pembayaran['status_pembayaran']=="DP"): ?>
-							<a title="Klik Jika Data Valid" href="<?php echo base_url("admin/pemesanan/Konfirmasi_dp/$id_pemesanan") ?>" class="btn btn-success">Konfirmasi</a>
+							<a title="Klik Jika Data Valid" href="<?php echo base_url("admin/pemesanan/Konfirmasi_dp/$id_pemesanan") ?>" class="btn btn-warning">Konfirmasi</a>
 						<?php elseif($pembayaran['status_pembayaran']=="Lunas"): ?>
 							<a title="Klik Jika Data Valid" href="<?php echo base_url("admin/pemesanan/Konfirmasi_lunas/$pembayaran[id_pembayaran]/$id_pemesanan") ?>" class="btn btn-warning">Konfirmasi</a>
 						<?php endif ?>

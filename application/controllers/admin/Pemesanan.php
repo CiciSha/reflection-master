@@ -55,6 +55,7 @@ class Pemesanan extends CI_Controller {
 	function konfirmasi_dp($id_pemesanan)
 	{
 		$data['tanggal_konfirmasi'] = date("Y-m-d");
+		$data['jenis_pembayaran'] = "Transfer";
 
 		$this->db->where('id_pemesanan', $id_pemesanan);
 		$this->db->update('pembayaran', $data);
@@ -69,7 +70,7 @@ class Pemesanan extends CI_Controller {
 	function konfirmasi_lunas($id_pembayaran,$id_pemesanan)
 	{
 		$data['tanggal_konfirmasi'] = date("Y-m-d");
-		
+		$data['jenis_pembayaran'] = "Transfer";
 		$this->db->where('id_pemesanan', $id_pemesanan);
 		$this->db->update('pembayaran', $data);
 

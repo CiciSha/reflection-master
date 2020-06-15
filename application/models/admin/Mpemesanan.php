@@ -38,15 +38,13 @@ class Mpemesanan extends CI_Model {
 	{
 		$input['id_pemesanan']= $id_pemesanan;
 		$input['tanggal_bayar']= date("Y-m-d");
-		echo "<pre>";
-		print_r ($input);
-		echo "</pre>";
 
 		$config['upload_path']= './assets/image/pembayaran';
 		$config['allowed_types']= 'gif|jpg|png|jpeg';
 
 		$this->load->library('upload', $config);
 		// panggil function untuk upload
+		$input['jenis_pembayaran'] = "Transfer";
 		$foto= $this->upload->do_upload("foto_bukti_bayar");
 		if($foto)
 		{
@@ -55,7 +53,6 @@ class Mpemesanan extends CI_Model {
 			// simpan data ke db
 			$this->db->insert('pembayaran', $input);
 		}
-		$input['jenis_pembayaran'] = "Transfer";
 
 		$inputan['status_pemesanan']= "Menunggu Konfirmasi";
 
@@ -79,19 +76,27 @@ class Mpemesanan extends CI_Model {
 		$isi_pengaturan = str_replace('{jumlah_bayar}', $input['jumlah_bayar'],$isi_pengaturan);
 		$isi_pengaturan = str_replace('{jenis_pembayaran}', $input['jenis_pembayaran'],$isi_pengaturan);
 		$isi_pengaturan = str_replace('{status_pembayaran}', $input['status_pembayaran'],$isi_pengaturan);
-		$isi_pengaturan = str_replace('{sisa_tagihan}',$sisa_tagihan,$isi_pengaturan);
+		if ($input['status_pembayaran']=="Lunas") 
+		{
+			$isi_pengaturan = str_replace('{sisa_tagihan}',0,$isi_pengaturan);
+		}
+		else
+		{
+			$isi_pengaturan = str_replace('{sisa_tagihan}',$sisa_tagihan,$isi_pengaturan);
+		}
+
 
 
 		$mail = new PHPMailer();
-		$body = $template;
+		$body = $isi_pengaturan;
 		$mail->IsSMTP();
 		$mail->SMTPOptions = array(
 			'ssl' => array(
 				'verify_peer' => false,
 				'verify_peer_name' => false,
 				'allow_self_signed' => true
-			)
-		);
+				)
+			);
 
 		$mail->Host = "smtp.gmail.com";
 		$mail->SMTPDebug = 0; 
@@ -102,9 +107,9 @@ class Mpemesanan extends CI_Model {
 		$mail->Username = "harya.sriharyati07@gmail.com"; 
 		$mail->Password = "7Januari1997"; 
 
-		$mail->SetFrom("ardhiaamalia29@gmail.com", 'Reflection Photography');
+		$mail->SetFrom("harya.sriharyati07@gmail.com", 'Reflection Photography');
 
-		$mail->AddReplyTo("ardhiaamalia29@gmail.com","Reflection Photography");
+		$mail->AddReplyTo("harya.sriharyati07@gmail.com","Reflection Photography");
 
 		$mail->Subject = "Konfirmasi Pembayaran";
 
@@ -124,77 +129,71 @@ class Mpemesanan extends CI_Model {
 		{
 			echo "Message sent!";
 		}
-
-
 	}
-	function ambil_pembayaran($id_pemesanan)
-	{
-		$this->db->join('pemesanan', 'pembayaran.id_pemesanan = pemesanan.id_pemesanan', 'left');
-		$this->db->join('member', 'member.id_member = member.id_member', 'left');
-		$this->db->where('pembayaran.id_pemesanan', $id_pemesanan);
-		$this->db->order_by('id_pembayaran', 'desc');
-		$ambil = $this->db->get('pembayaran');
-		return $ambil->row_array();
-	}
-	function ubah_pemesanan($input,$id_pemesanan)
-	{
-		unset($input['pose']);
-		unset($input['file']);
-		unset($input['harga_pose']);
-		unset($input['harga_file']);
+function ambil_pembayaran($id_pemesanan)
+{
+	$this->db->join('pemesanan', 'pembayaran.id_pemesanan = pemesanan.id_pemesanan', 'left');
+	$this->db->join('member', 'member.id_member = member.id_member', 'left');
+	$this->db->where('pembayaran.id_pemesanan', $id_pemesanan);
+	$this->db->order_by('id_pembayaran', 'desc');
+	$ambil = $this->db->get('pembayaran');
+	return $ambil->row_array();
+}
+function ubah_pemesanan($input,$id_pemesanan)
+{
+	unset($input['pose']);
+	unset($input['file']);
+	unset($input['harga_pose']);
+	unset($input['harga_file']);
 
-		$inputan['max_pose_pemesanan'] = $input['max_pose_pemesanan'];
-		$inputan['max_file_pemesanan'] = $input['max_file_pemesanan'];
-		$inputan['total_tambahan'] = $input['total_tagihan'];
+	$inputan['max_pose_pemesanan'] = $input['max_pose_pemesanan'];
+	$inputan['max_file_pemesanan'] = $input['max_file_pemesanan'];
+	$inputan['total_tambahan'] = $input['total_tagihan'];
 
-		$this->db->where('id_pemesanan', $id_pemesanan);
-		$this->db->update('pemesanan', $inputan);
+	$this->db->where('id_pemesanan', $id_pemesanan);
+	$this->db->update('pemesanan', $inputan);
 
-		$pembayaran['jenis_pembayaran'] = "Tunai";
-		$pembayaran['jumlah_bayar'] = $input['total_tagihan'];
-		$pembayaran['id_pemesanan'] = $id_pemesanan;
-		$pembayaran['status_pembayaran'] = "Lunas";
-		$pembayaran['tanggal_bayar'] = date("Y-m-d");
-		$pembayaran['tanggal_konfirmasi'] = date("Y-m-d");
+	$pembayaran['jenis_pembayaran'] = "Tunai";
+	$pembayaran['jumlah_bayar'] = $input['total_tagihan'];
+	$pembayaran['id_pemesanan'] = $id_pemesanan;
+	$pembayaran['status_pembayaran'] = "Lunas";
+	$pembayaran['tanggal_bayar'] = date("Y-m-d");
+	$pembayaran['tanggal_konfirmasi'] = date("Y-m-d");
 
-		$this->db->insert('pembayaran', $pembayaran);
-	}
-	function ambil_pembayaran_pemesanan($id_pemesanan)
-	{
-		$this->db->join('pemesanan', 'pembayaran.id_pemesanan = pemesanan.id_pemesanan', 'left');
-		$this->db->where('pembayaran.id_pemesanan', $id_pemesanan);
+	$this->db->insert('pembayaran', $pembayaran);
+}
+function ambil_pembayaran_pemesanan($id_pemesanan)
+{
+	$this->db->join('pemesanan', 'pembayaran.id_pemesanan = pemesanan.id_pemesanan', 'left');
+	$this->db->where('pembayaran.id_pemesanan', $id_pemesanan);
 		// $this->db->order_by('id_pembayaran', 'desc');
-		$ambil = $this->db->get('pembayaran');
-		return $ambil->result_array();
-	}
-	function simpan_testimoni($input,$id_pemesanan)
-	{
-		$input['id_pemesanan'] = $id_pemesanan;
-		$input['tanggal_testimoni'] = date("Y-m-d");
-		$input['status_testimoni'] = "Menunggu";
+	$ambil = $this->db->get('pembayaran');
+	return $ambil->result_array();
+}
+function simpan_testimoni($input,$id_pemesanan)
+{
+	$input['id_pemesanan'] = $id_pemesanan;
+	$input['tanggal_testimoni'] = date("Y-m-d");
+	$input['status_testimoni'] = "Menunggu";
 
-		$this->db->insert('testimoni', $input);
-	}
-	function tampil_testimoni()
-	{
-		$this->db->join('pemesanan', 'testimoni.id_pemesanan = pemesanan.id_pemesanan', 'left');
-		$this->db->join('member', 'pemesanan.id_member = member.id_member', 'left');
-		$this->db->where('status_testimoni', 'Diterima');
-		$input = $this->db->get('testimoni');
-		return $input->result_array();
-	}
-	function hitung_pemesanan($id_paket)
-	{
-		$bulan = date("m");
-		$tahun = date("Y");
-		$ambil = $this->db->query("SELECT COUNT(pemesanan.id_tipe_paket) AS jumlah_paket FROM pemesanan
+	$this->db->insert('testimoni', $input);
+}
+function tampil_testimoni()
+{
+	$this->db->join('pemesanan', 'testimoni.id_pemesanan = pemesanan.id_pemesanan', 'left');
+	$this->db->join('member', 'pemesanan.id_member = member.id_member', 'left');
+	$this->db->where('status_testimoni', 'Diterima');
+	$input = $this->db->get('testimoni');
+	return $input->result_array();
+}
+function hitung_pemesanan($id_paket)
+{
+	$bulan = date("m");
+	$tahun = date("Y");
+	$ambil = $this->db->query("SELECT COUNT(pemesanan.id_tipe_paket) AS jumlah_paket FROM pemesanan
 		LEFT JOIN tipe_paket ON pemesanan.id_tipe_paket=tipe_paket.id_tipe_paket
 		LEFT JOIN paket ON tipe_paket.id_paket=paket.id_paket
 		WHERE tipe_paket.id_paket='$id_paket' AND MONTH(pemesanan.tanggal_pemesanan)='$bulan' AND YEAR(pemesanan.tanggal_pemesanan)='$tahun'");
-		return $ambil->row_array();
-	}
-
+	return $ambil->row_array();
 }
-
-/* End of file Mpaket.php */
-/* Location: ./application/models/Mpaket.php */
+}

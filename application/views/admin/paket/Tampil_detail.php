@@ -1,4 +1,3 @@
-
 <div
 class="collapse navbar-collapse"
 id="navbarSupportedContent"
@@ -13,7 +12,7 @@ style="text-align: right !important;">
 			<a href="<?php echo base_url("admin/home")?>">Beranda</a>
 		</li>
 		<li class="breadcrumb-item btn-link">
-			<a href="<?php echo base_url("admin/paket") ?>">Paket</a>
+			<a href="<?php echo base_url("admin/paket")?>">Paket</a>
 		</li>
 		<li class="breadcrumb-item active" aria-current="page">Detail Paket</li>
 	</ol>
@@ -29,7 +28,6 @@ style="text-align: right !important;">
 			<th class="align-middle col10">Foto Tipe Paket</th>
 			<th class="align-middle col10">Minimal DP</th>
 			<th class="align-middle">Aksi</th>
-
 		</tr>
 	</thead>
 	<tbody>
@@ -49,8 +47,7 @@ style="text-align: right !important;">
 					<a href="<?php echo base_url("admin/paket/studio/$value[id_tipe_paket]") ?>" class="btn btn-success btn-xs">Studio</a>
 				</td>
 			</tr>	
-		<?php endforeach ?>
-		
+		<?php endforeach ?>	
 	</tbody>	
 </table>
 <a href="<?php echo base_url("admin/paket/form_detail_paket/$id_paket") ?>" class="btn btn-primary">Tambah</a>

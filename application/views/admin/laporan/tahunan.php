@@ -3,6 +3,7 @@
 </div>
 </div>
 </nav>
+<div class="container">
 <form method="post">
 	<div class="form-group">
 		<label>Tahun</label>
@@ -57,3 +58,4 @@
 	</table>
 	<a href="<?php echo base_url("admin/laporan/cetak_tahunan/$_POST[tahun]") ?>" class="btn btn-info">Cetak</a>
 <?php endif ?>
+</div>

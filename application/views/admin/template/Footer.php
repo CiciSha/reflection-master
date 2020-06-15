@@ -2,9 +2,9 @@
   <div class="card-footer" style="color: black !important;">
     <div class="row pt-1 mt-1 text-center" >
       <div class="col-md-12">
-       <!--  <p>
+       <p>
           Copyright Reflection Photography. All Rights Reserved
-        </p> -->
+        </p>
       </div> 
     </div>
   </div>

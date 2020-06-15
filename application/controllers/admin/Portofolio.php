@@ -52,6 +52,12 @@ class Portofolio extends CI_Controller {
 		$this->load->view('admin/portofolio/Tambah_portofolio',$data);
 		$this->load->view('admin/template/Footer');
 	}
+	function hapus($id_portofolio)
+	{
+		$this->Mportofolio->hapus_portofolio($id_portofolio);
+		$this->session->set_flashdata('pesan', 'Data Berhasil Dihapus!');
+		redirect('admin/portofolio','refresh');
+	}
 
 	// function edit_portofolio($id_portofolio)
 	// {

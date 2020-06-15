@@ -26,7 +26,8 @@
 				<td><?php echo $value ['keterangan']; ?></td>
 				<td>
 					<a href="<?php echo base_url("admin/portofolio/tampil_edit_portofolio/$value[id_portofolio]")?>" class="btn btn-warning btn-xs">Edit</a>
-					<a href="" class="btn btn-danger btn-xs">Hapus</a>
+					<!-- <a href="" class="btn btn-danger btn-xs">Hapus</a> -->
+					<a href="<?php echo base_url("admin/portofolio/hapus/$value[id_portofolio]") ?>" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin akan menghapus data ini?')">Hapus</a>
 				</td>
 			</tr>	
 		<?php endforeach ?>

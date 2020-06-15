@@ -24,7 +24,7 @@
 				<td>
 					<a href="<?php echo base_url("admin/paket/tampil_detail_paket/$value[id_paket]")?>" class="btn btn-info btn-xs">Detail</a>
 					<a href="<?php echo base_url("admin/paket/tampil_edit_paket/$value[id_paket]")?>" class="btn btn-warning btn-xs">Edit</a>
-					<a href="<?php echo base_url("admin/paket/hapus/$value[id_paket]") ?>" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
+					<a href="<?php echo base_url("admin/paket/hapus/$value[id_paket]") ?>" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin akan menghapus data ini?')">Hapus</a>
 				</td>
 			</tr>	
 		<?php endforeach ?>

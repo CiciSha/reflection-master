@@ -1,4 +1,4 @@
-<div class="container"> 
+<!-- <div class="container"> 
 	<h3 class="mt-3">Informasi Member</h3>
 	<div class="col-md-5 p-0 mb-5 mt-2">
 		<table class="table table-borderless">
@@ -22,13 +22,43 @@
 				<td>:</td>
 				<td><?php echo $_SESSION['member']['alamat_member'] ?></td>
 			</tr>
-		</table>
+		</table> -->
+
+	<div class="container" style="margin-top: 60px">
+	<h3 style="margin-bottom: 40px;" class="text-center">Informasi Member</h3>
+	<div class="row">
+		<div class="col-md-6 offset-3">
+			<table class="table table-striped">
+				<tr>
+					<th width="150px">Nama Member</th>
+					<th> : </th>
+					<td><?php echo $_SESSION['member']['nama_member'] ?></td>
+				</tr>
+				<tr>
+					<th width="150px">Email</th>
+					<th> : </th>
+					<td><?php echo $_SESSION['member']['email_member'] ?></td>
+				</tr>	
+				<tr>
+					<th width="150px">No.Telepon</th>
+					<th> : </th>
+					<td><?php echo $_SESSION['member']['no_telepon_member'] ?></td>
+				</tr>
+				<tr>
+					<th width="150px">Alamat</th>
+					<th> : </th>
+					<td><?php echo $_SESSION['member']['alamat_member'] ?></td>
+				</tr>
+			</table>
 
 		<button type="button" class="btn btn-primary rounded" data-toggle="modal" data-target="#exampleModal">
 			Edit Profil
 		</button>
+		<div style="margin-bottom: 30%;"></div>
 	</div>
-	
+	</div>	
+	</div>	
+
 
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

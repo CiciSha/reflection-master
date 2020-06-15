@@ -67,7 +67,7 @@
 					</div>
 					<?php if ($tipe_paket['nama_paket']!="Personal" && $tipe_paket['nama_paket']!='Maternity & Baby' && $tipe_paket['nama_paket']!='Prewedding Indoor' && $tipe_paket['nama_paket']!='Pass Foto'): ?>
 						<div class="form-group">
-							<label class="input100">Tambahan Orang(Optional)</label>
+							<label class="input100">Tambahan Orang (Optional)</label>
 							<input type="number" name="tambah" class="form-control" placeholder="Silahkan Input Jumlah Orang" >
 							<input type="" hidden="" name="id" value="<?php echo $tipe_paket['id_tipe_paket'] ?>">
 						</div>

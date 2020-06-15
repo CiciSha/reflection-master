@@ -41,7 +41,8 @@
 				</td>
 				<td style="text-align: center;">
 					<a href="<?php echo base_url("admin/studio/edit_detail_studio/$value[id_detail_studio]")?>" class="btn btn-info btn-xs">Edit</a>
-					<a href="<?php echo base_url("admin/studio/")?>" class="btn btn-warning btn-xs">Hapus</a>
+					<!-- <a href="<?php echo base_url("admin/studio/")?>" class="btn btn-warning btn-xs">Hapus</a> -->
+					<a href="<?php echo base_url("admin/studio/hapus_detail_studio/$value[id_detail_studio]") ?>" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin akan menghapus data ini?')">Hapus</a>
 				</td>
 			</tr>
 			

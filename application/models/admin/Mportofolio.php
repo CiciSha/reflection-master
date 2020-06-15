@@ -68,6 +68,17 @@ class Mportofolio extends CI_Model {
 		}
 		
 	}
+	function hapus_portofolio($id_portofolio)
+	{
+		$data	= $this->ambil_portofolio($id_portofolio);
+		$foto_hapus = $data['foto'];
+		if ($foto_hapus) 
+		{
+			unlink("./assets/image/portofolio/$foto_hapus");
+		}
+		$this->db->where('id_portofolio', $id_portofolio);
+		$this->db->delete('portofolio');
+	}
 	function tampil_portofolio_paket($id_paket)
 	{
 		$this->db->join('paket', 'portofolio.id_paket = paket.id_paket', 'left');

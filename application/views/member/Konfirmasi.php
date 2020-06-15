@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 60px">
+<div class="container" style="margin-top: 60px"; >
 	<h3 style="margin-bottom: 40px;" class="text-center">Konfirmasi Pembayaran</h3>
 	<form class="needs-validation" method="post" enctype="multipart/form-data" novalidate>
 		<div class="form-row">
@@ -77,9 +77,8 @@
 			</div>
 		</div>
 		
-		<div class="col-md-4">
-			<button class="btn btn-primary " type="submit">Submit form</button>
-			
+		<div class="col-md-4" style="margin-bottom: 17%; padding-left: 0px;">
+		<button class="btn btn-primary " type="submit">Submit</button>	
 		</div>
 	</form>
 </div>

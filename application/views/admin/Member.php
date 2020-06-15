@@ -3,7 +3,7 @@
 </div>
 </div>
 </nav>
-
+<div class="container">
 <table class="table table-hover" id="thetable">
 	<thead>
 		<tr>

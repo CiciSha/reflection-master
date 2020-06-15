@@ -1,4 +1,4 @@
-    <!-- bagian konten -->
+<!-- bagian konten -->
        <div class="site-blocks-cover overlay inner-page-cover" style="background-image: url('<?php echo base_url("./assets/image/slider/Family.jpg") ?>');" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center">
@@ -8,29 +8,6 @@
           </div>
         </div>
       </div>
-   
-   
-   <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="./assets/image/slider/Family.jpg" alt="First slide" style="width: 100%;height: 600px;">
-      </div>
-
-      <div class="carousel-item">
-        <img class="d-block w-100" src="./assets/image/slider/Family.jpg" alt="Second slide" style="width: 100%;height: 600px;">
-      </div>
- 
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div> -->
-
     <div class="site-block-profile-pic" data-aos="fade" data-aos-delay="200">
       <a href="about.html"><img src="<?php echo base_url("assets/image/blog/tourist.png") ?>" alt="Image"></a>
     </div>
@@ -46,16 +23,16 @@
 
         <div class="row">
           <div class="col-md-3">
-            <img class="mx-auto d-block" style="max-width: 65px;" src="<?php echo base_url('./assets/image/blog/photographer.png') ?>">
+            <img class="mx-auto d-block" style="max-width: 65px;" src="<?php echo base_url('./assets/image/blog/photo-camera.png') ?>">
             <div class="text-center"><br>
-              <h5>Pengalaman</h5>
+              <h5>Kamera</h5>
               <h5>Profesional</h5>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
           <div class="col-md-3">
-            <img class="mx-auto d-block" style="max-width: 65px;" src="<?php echo base_url('./assets/image/blog/photo-camera.png') ?>">
+            <img class="mx-auto d-block" style="max-width: 65px;" src="<?php echo base_url('./assets/image/blog/photographer.png') ?>">
             <div class="text-center"><br>
               <h5>Fotographer</h5>
               <h5>Berpengalaman</h5>
@@ -85,13 +62,7 @@
       </div>
     </div>
 
-
     <!-- ================================================ -->
-
-
-
-    <!-- ========================================================= -->
-
 
     <div class="site-section border-bottom">
       <div class="container">
@@ -104,7 +75,7 @@
         <div class="row">
           <?php foreach ($paket as $key => $value): ?>
             <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-              <a class="image-gradient" href="<?php echo base_url("member/detail_paket/$value[id_paket]") ?>" >
+              <a class="image-gradient" href="<?php echo base_url("paket/detail_paket/$value[id_paket]") ?>" >
                 <figure style="align-content: center;">
                   <img src="<?php echo base_url("./assets/image/paket/$value[foto_paket]") ?>" alt="" class="img-fluid">
                 </figure>

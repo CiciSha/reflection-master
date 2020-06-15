@@ -29,9 +29,7 @@ style="text-align: right !important;">
 		<input type="file" name="foto_paket" class="form-control"> 
 	</div>
 	<button class="btn btn-primary">Simpan</button>
-	
 </form>
-
 </div>
 
 

@@ -42,16 +42,13 @@
     </div>
 
     <!-- ================================================ -->
-
-
-
     <div class="container">
       <!-- <div class="row no-gutters" id="lightgallery"> -->
       <div class="site-section border-bottom">
         <div class="container">
           <div class="row text-center justify-content-center mb-5">
             <div class="col-md-7" data-aos="fade-up">
-              <h2>Portofolio Kami</h2>
+              <h2>Portofolio</h2>
             </div>
           </div>
 
@@ -75,7 +72,7 @@
   </div>
 </div>
 
-
+<h3 class="text-center">Google Maps</h3><br>
 <div id="map"></div>
 <script>
           // untuk setting lokasi, atau bagian lat dan lang

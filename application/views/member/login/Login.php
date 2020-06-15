@@ -31,7 +31,7 @@
 	<style>
 		.limiter
 		{
-			background-image: url('<?php echo base_url("assets/image/slider/Graduation.jpg") ?>');
+			background-image: url('<?php echo base_url("assets/image/slider/Graduation1.jpg") ?>');
 		}
 		
 	</style>

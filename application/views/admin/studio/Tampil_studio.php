@@ -25,7 +25,8 @@
 					
 					<a href="<?php echo base_url("admin/studio/tampil_detail_studio/$value[id_studio]")?>" class="btn btn-info btn-xs">Detail</a>
 					<a href="<?php echo base_url("admin/studio/edit_studio/$value[id_studio]")?>" class="btn btn-warning btn-xs">Edit</a>
-					<a href="" class="btn btn-danger btn-xs">Hapus</a>
+					<!-- <a href="" class="btn btn-danger btn-xs">Hapus</a> -->
+					<a href="<?php echo base_url("admin/studio/hapus/$value[id_studio]") ?>" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin akan menghapus data ini?')">Hapus</a>
 				</td>
 			</tr>	
 		<?php endforeach ?>

@@ -1,4 +1,4 @@
-<div class="site-section border-bottom">
+<div class="site-section border-bottom" style="padding-bottom: 0px;">
   <div class="container">
     <div class="row text-center justify-content-center mb-5">
       <div class="col-md-7" data-aos="fade-up">
@@ -34,36 +34,12 @@
               </div>
               <div class="card-footer text-muted">
                 <?php if (isset($_SESSION['member'])): ?>
-                     <a href="<?php echo base_url("member/paket/$value[id_tipe_paket]") ?>" class="btn btn-primary rounded">Pesan</a> 
+                     <a href="<?php echo base_url("pemesanan/paket/$value[id_tipe_paket]") ?>" class="btn btn-primary rounded">Pesan</a> 
                    <?php else: ?>
                     <a onclick="return confirm('Silahkan Lakukan Login!')" href="<?php echo base_url("login") ?>" class="btn btn-primary">Pesan</a> 
                   <?php endif ?>
               </div>
             </div>
-
-              <div class="image-gradient">
-                <figure style="align-content: center;">
-                  <img src="<?php echo base_url("./assets/image/tipe/$value[foto_tipe_paket]") ?>" alt="" class="img-fluid">
-                </figure>
-                <div class="text">
-                  <h3><?php echo $value['nama_tipe_paket'] ?></h3>
-                  <span class="text-light">
-                    <?php echo $value['deskripsi_tipe_paket'] ?>
-                    <br>
-                    Max Orang : <?php echo $value['max_jumlah_orang'] ?> Orang
-                    <br>
-                    Harga : Rp. <?php echo number_format($value['harga_tipe_paket']) ?>
-                    <br>
-                    Minimal DP : Rp. <?php echo number_format($value['min_dp_tipe_paket']) ?>
-                  </span>
-                  <br><br>
-                    <?php if (isset($_SESSION['member'])): ?>
-                     <a href="<?php echo base_url("pemesanan/paket/$value[id_tipe_paket]") ?>" class="btn btn-success rounded">Pesan</a> 
-                   <?php else: ?>
-                    <a title="Silahkan Login Sebelum Pesan" href="<?php echo base_url("pemesanan/paket/$value[id_tipe_paket]") ?>" class="btn btn-success disabled" disabled="disabled">Pesan</a> 
-                  <?php endif ?>
-                </div>
-              </div>
             </div>
           <?php endforeach ?>  
         </div>

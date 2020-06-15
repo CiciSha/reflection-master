@@ -4,7 +4,6 @@
   <title>Reflection Studio Member</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo base_url("assets/fonts/icomoon/style.css") ?>">
   <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css") ?>">
@@ -65,7 +64,7 @@
                     <a href="#">Paket</a>
                     <ul class="dropdown">
                      <?php foreach ($paket as $key => $value): ?>
-                      <li><a href="<?php echo base_url("member/detail_paket/$value[id_paket]") ?>"><?php echo $value['nama_paket'] ?></a></li>
+                      <li><a href="<?php echo base_url("paket/detail_paket/$value[id_paket]") ?>"><?php echo $value['nama_paket'] ?></a></li>
                     <?php endforeach ?>
                   </ul>
                 </li>
