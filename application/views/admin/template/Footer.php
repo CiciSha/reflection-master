@@ -26,11 +26,16 @@
 <script src="<?php echo base_url("assets/js/lightgallery-all.min.js") ?>"></script>
 <script src="<?php echo base_url("assets/js/jquery.mousewheel.min.js") ?>"></script>
 <script src="<?php echo base_url("assets/js/main_member.js") ?>"></script>
-
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 <script>
   $(document).ready(function(){
     $('#lightgallery').lightGallery();
   });
+  $(document).ready(function(){
+    $('#thetable').DataTable();
+  });
+
 </script>
 </body>
 </html>

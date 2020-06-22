@@ -19,7 +19,6 @@ id="navbarSupportedContent"> &nbsp;
 					<th>Status</th>
 					<th>Bukti Bayar</th>
 					<th>Opsi</th>
-
 				</tr>
 			</thead>
 			<!-- <pre><?php print_r($pembayaran) ?></pre> -->

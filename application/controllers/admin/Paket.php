@@ -39,6 +39,7 @@ class Paket extends CI_Controller {
 			if ($this->form_validation->run() == TRUE ) 
 			{
 				$this->Mpaket->simpan_paket($input);
+				echo "<script>alert('Data berhasil ditambahkan!');</script>";
 				redirect('admin/paket','refresh');
 			} 
 			else
@@ -74,6 +75,7 @@ class Paket extends CI_Controller {
 			if ($this->form_validation->run() == TRUE) 
 			{
 				$this->Mpaket->simpan_detail_paket($input,$id_paket);
+				echo "<script>alert('Data berhasil ditambahkan!');</script>";
 				redirect("admin/paket/tampil_detail_paket/$id_paket",'refresh');
 			} 
 			else
@@ -96,6 +98,7 @@ class Paket extends CI_Controller {
 		if ($input) 
 		{
 			$this->Mpaket->ubah_paket($input,$id_paket);
+			echo "<script>alert('Data berhasil diubah!');</script>";
 			redirect('admin/paket','refresh');
 		}
 
@@ -115,6 +118,7 @@ class Paket extends CI_Controller {
 		{
 			$id_paket = $data['tipe_paket']['id_paket'];
 			$this->Mpaket->ubah_tipe_paket($input,$id_tipe_paket);
+			echo "<script>alert('Data berhasil diubah!');</script>";
 			redirect("admin/paket/tampil_detail_paket/$id_paket",'refresh');
 		} 
 		$data ['id_paket'] = $data['tipe_paket']['id_paket'];
@@ -136,9 +140,9 @@ class Paket extends CI_Controller {
 
 		$data['studio'] = $this->Mstudio->tampil_studio();
 		$data['paket'] = $this->Mpaket->ambil_tipe_paket($id_tipe_paket);
-		echo "<pre>";
-		print_r ($data['paket']);
-		echo "</pre>";
+		// echo "<pre>";
+		// print_r ($data['paket']);
+		// echo "</pre>";
 		$data['paket_studio'] = $this->Mpaket->ambil_paket_studio($id_tipe_paket);
 
 		$this->load->view('admin/template/Header');

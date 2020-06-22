@@ -36,6 +36,7 @@ class Studio extends CI_Controller
 			if ($this->form_validation->run() == TRUE )
 			{
 				$this->Mstudio->simpan_studio($input);
+				echo "<script>alert('Data berhasil ditambahkan!');</script>";
 				redirect('admin/studio','refresh');
 			}
 		}
@@ -67,6 +68,7 @@ class Studio extends CI_Controller
 			// if ($this->form_validation->run() == TRUE ) 
 			// {
 				$this->Mstudio->simpan_detail_studio($input, $id_studio);
+				echo "<script>alert('Data berhasil ditambahkan!');</script>";
 				redirect("admin/studio/Tampil_detail_studio/$id_studio",'refresh');
 			// } 
 		}
@@ -85,6 +87,7 @@ class Studio extends CI_Controller
 		{
 			// $id_paket = $data['tipe_paket']['id_paket'];
 			$this->Mstudio->ubah_studio($input,$id_studio);
+			echo "<script>alert('Data berhasil diubah!');</script>";
 			redirect("admin/studio",'refresh');
 		} 
 
@@ -100,6 +103,7 @@ class Studio extends CI_Controller
 			{
 				$id_studio = $data['detail_studio']['id_studio'];
 				$this->Mstudio->ubah_detail_studio($input,$id_detail_studio);
+				echo "<script>alert('Data berhasil diubah!');</script>";
 				redirect("admin/studio/tampil_detail_studio/$id_studio",'refresh');
 			}
 	

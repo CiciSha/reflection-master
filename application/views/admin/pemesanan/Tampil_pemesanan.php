@@ -8,7 +8,7 @@
 	<thead>
 		<tr>
 			<th>No</th>
-			<th>Kode</th>
+			<th>Nomor Order</th>
 			<th>Nama</th>
 			<th>Tanggal Pesan</th>
 			<th>Tanggal Booking</th>
@@ -41,7 +41,7 @@
 					<?php if ($kurang_tiga_hari==$hari_ini OR $lebih_tiga_hari==$hari_ini): ?>
 						<a href="<?php echo base_url("admin/pemesanan/reschedule/$value[id_pemesanan]") ?>" class="btn btn-success btn-xs">Reschedule</a> <br> <br>
 						<?php elseif($value['status_pemesanan']=="Proses"): ?>
-							<a href="<?php echo base_url("admin/pemesanan/selesai/$value[id_pemesanan]") ?>" class="btn btn-info btn-sm">Selesai</a> <br><br>
+							<a href="<?php echo base_url("admin/pemesanan/selesai/$value[id_pemesanan]") ?>" class="btn btn-info btn-sm" onclick="return confirm('Apakah Anda yakin pemesanan ini telah selesai?')">Selesai</a> <br><br> 
 							<?php elseif($value['status_pemesanan']=="Menunggu Konfirmasi"): ?>
 								<a href="<?php echo base_url("admin/pemesanan/dp/$value[id_pemesanan]") ?>" class="btn btn-warning">Pembayaran</a> <br><br>
 							<?php endif ?>
@@ -52,6 +52,7 @@
 			</tbody> 
 		</table>
 	</div>
+</div>
 
 
 

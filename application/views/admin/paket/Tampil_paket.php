@@ -32,6 +32,6 @@
 </table>
 
 <a href="<?php echo base_url("admin/paket/tambah_paket")?>" class="btn btn-primary">Tambah</a>
-</div>
-
+<!-- </div>
+</div> -->
 

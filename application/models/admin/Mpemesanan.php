@@ -145,6 +145,7 @@ function ubah_pemesanan($input,$id_pemesanan)
 	unset($input['file']);
 	unset($input['harga_pose']);
 	unset($input['harga_file']);
+	unset($input['harga']);
 
 	$inputan['max_pose_pemesanan'] = $input['max_pose_pemesanan'];
 	$inputan['max_file_pemesanan'] = $input['max_file_pemesanan'];
@@ -154,7 +155,7 @@ function ubah_pemesanan($input,$id_pemesanan)
 	$this->db->update('pemesanan', $inputan);
 
 	$pembayaran['jenis_pembayaran'] = "Tunai";
-	$pembayaran['jumlah_bayar'] = $input['total_tagihan'];
+	$pembayaran['jumlah_bayar'] = $input['total_tagihan_keseluruhan'];
 	$pembayaran['id_pemesanan'] = $id_pemesanan;
 	$pembayaran['status_pembayaran'] = "Lunas";
 	$pembayaran['tanggal_bayar'] = date("Y-m-d");

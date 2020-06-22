@@ -9,8 +9,8 @@
   </div>
 </div>
 
-<div class="site-section" data-aos="fade">
-  <div class="container">
+<div class="site-section" data-aos="fade" style="padding-bottom: 0px;">
+  <div class="container" style="margin-bottom: 5%">
     <div class="row mb-12">
       <div class="col-md-12">
         <h3 class="text-center">Sejarah Reflection</h3><br>

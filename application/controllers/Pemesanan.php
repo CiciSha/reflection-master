@@ -24,7 +24,7 @@ class Pemesanan extends CI_Controller {
 		{
 			$this->Mpaket->simpan_reservasi_paket($input);
 
-			echo "<script>alert('Lakukan Pembayaran Dalam Waktu 1x24 jam')</script>";
+			echo "<script>alert('Pemesanan Anda Berhasil dan Lakukan Pembayaran Dalam Waktu 1x24 jam')</script>";
 			redirect('member/riwayat','refresh');
 		}
 

@@ -35,17 +35,17 @@
 					</span>
 					<div class="form-group" >
 						<label class="input100">Nama Lengkap <small class="text-danger">**Nama Harus Sesuai Dengan KTP</small></label>
-						<input class="form-control" type="text" name="nama_member">
+						<input class="form-control" type="text" name="nama_member" value= "<?php echo $_SESSION['member']['nama_member'] ?>" required>
 					</div>
 
 					<div class="form-group" >
 						<label class="input100">No. Telepon</label>
-						<input class="form-control" type="text" name="no_telepon_member">
+						<input class="form-control" type="text" name="no_telepon_member" value= "<?php echo $_SESSION['member']['no_telepon_member'] ?>">
 					</div>
 
 					<div class="form-group" >
 						<label class="input100">Tanggal Booking</label>
-						<input class="form-control" type="date" name="tanggal_booking">  
+						<input class="form-control" type="date" name="tanggal_booking" required>  
 					</div>
 
 					<div class="form-group" >
@@ -86,11 +86,11 @@
 						<?php $hitung_studio = count($studio); ?>
 						<?php if ($hitung_studio==2): ?>
 							<?php foreach ($studio as $key => $value): ?>
-								<input type="radio" id="<?php echo $value['id_studio'] ?>" name="id_studio" value="<?php echo $value['id_studio'] ?>"> <?php echo $value['nama_studio'] ?> <br>
+								<input type="radio" id="<?php echo $value['id_studio'] ?>" name="id_studio" value="<?php echo $value['id_studio'] ?>" required > <?php echo $value['nama_studio'] ?> <br>
 							<?php endforeach ?>
 							<?php else: ?>
 								<?php foreach ($studio as $key => $value): ?>
-									<input type="checkbox" name="id_studio[<?php echo $value['id_studio'] ?>]" value="<?php echo $value['id_studio'] ?>"> <?php echo $value['nama_studio'] ?> <br>
+									<input type="checkbox" name="id_studio[<?php echo $value['id_studio'] ?>]" value="<?php echo $value['id_studio'] ?>" required > <?php echo $value['nama_studio'] ?> <br>
 								<?php endforeach ?>
 							<?php endif ?>
 						</div>

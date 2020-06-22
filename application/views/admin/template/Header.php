@@ -1,34 +1,28 @@
 <!doctype html>
 <html lang="en">
 <head>
- <title>Reflection Studio</title>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="<?php echo base_url("assets/css/style.css");?>">
-
- <link href="<?php echo base_url("assets/css/bootstrap.min.css") ?>" rel="stylesheet">
- <link rel="stylesheet" href="<?php echo base_url("assets/css/dataTables.css");?>">
- <script src="<?php echo base_url("assets/js/jquery-3.3.1.min.js") ?>"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- <style type="text/css">
-  ${demo.css}
-</style>
+<title>Reflection Studio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="<?php echo base_url("assets/css/style.css");?>">
+<link href="<?php echo base_url("assets/css/bootstrap.min.css") ?>" rel="stylesheet">
+<link rel="stylesheet" href="<?php echo base_url("assets/css/dataTables.css");?>">
+<script src="<?php echo base_url("assets/js/jquery-3.3.1.min.js") ?>"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style type="text/css">${demo.css}</style>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/drilldown.js"></script>
 </head>
 
 <body>
-
   <div class="wrapper d-flex align-items-stretch">
    <nav id="sidebar">
     <div class="p-4 pt-5">
-      <img class="img logo rounded-circle mb-5" src="<?php echo base_url("./assets/image/pic.png") ?>">
+      <img class="img logo rounded-circle mb-5" src="<?php echo base_url("./assets/image/icon/worker.png") ?>">
       <ul class="list-unstyled components mb-5">
         <li class="active">
          <a href="<?php echo base_url ("admin/home") ?>">Beranda</a>

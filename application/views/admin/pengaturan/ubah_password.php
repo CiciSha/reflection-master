@@ -5,7 +5,7 @@
 </nav>
 <!-- <nav aria-label="breadcrumb">
 	<h2>Ubah Password</h2> -->
-	<form method="POST">
+	<form method="POST" style="margin-bottom: 38%;">
 		<div class="form-group">
 			<label>Password Lama</label>
 			<input class="form-control" type="password" name="" required="">

@@ -18,10 +18,12 @@ class Login extends CI_Controller {
 			$hasil_login=$this->Muser->login_user($input);
 			if ($hasil_login=="sukses")
 			{
+				echo "<script>alert('Anda berhasil login!');</script>";
 				redirect('admin/home','refresh');
 			}
 			elseif ($hasil_login=="sukses-member")
 			{
+				echo "<script>alert('Anda berhasil login!');</script>";
 				redirect('home','refresh');
 			}
 			elseif ($hasil_login=="gagal") 

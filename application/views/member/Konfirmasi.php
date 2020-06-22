@@ -14,7 +14,7 @@
 				<?php if ($pemesanan['status_pemesanan']=="DP"): ?>
 					<input type="text" name="status_pembayaran" value="Lunas" class="form-control" readonly="">
 				<?php else: ?>
-					<select class="form-control" name="status_pembayaran">
+					<select class="form-control" name="status_pembayaran" required>
 						<option>-Pilih Jenis Pembayaran-</option>
 						<option value="DP">DP</option>
 						<option value="Lunas">Lunas</option>
@@ -56,7 +56,7 @@
 		<div class="form-row">
 			<div class="col-md-4 mb-3">
 				<label for="validationCustom03">No.Rekening</label>
-				<input type="text" class="form-control" id="validationCustom03" name="no_rekening" placeholder="No.Rekening">
+				<input type="text" class="form-control" id="validationCustom03" name="no_rekening" placeholder="No.Rekening" required>
 				<div class="invalid-feedback">
 					Please provide a valid city.
 				</div>
@@ -71,14 +71,15 @@
 			<div class="col-md-4 mb-3">
 				<label for="validationCustom05">Bukti Bayar</label>
 				<input type="file" name="foto_bukti_bayar" class="form-control" id="validationCustom05" required>
+				<span class="text-danger">**Upload file dalam bentuk JPG, JPEG, PNG.</span>
 				<div class="invalid-feedback">
 					Please provide a valid zip.
 				</div>
 			</div>
 		</div>
 		
-		<div class="col-md-4" style="margin-bottom: 17%; padding-left: 0px;">
-		<button class="btn btn-primary " type="submit">Submit</button>	
+		<div class="col-md-4" style="margin-bottom: 17%; padding-left: 0px; " >
+		<button class="btn btn-primary"  type="submit" >Submit</button>	
 		</div>
 	</form>
 </div>

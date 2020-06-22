@@ -129,7 +129,10 @@ class Member extends CI_Controller {
 		if ($input)
 		{
 			$this->Mpemesanan->simpan_testimoni($input,$id_pemesanan);
+			echo "<script>alert('Testimoni Berhasil Disimpan');</script>";
+			redirect('home','refresh');
 		}
+
 		$this->load->model('admin/Mpaket');
 		$data['paket'] = $this->Mpaket->getAllPaket();
 
@@ -161,7 +164,8 @@ class Member extends CI_Controller {
 		if($input)
 		{
 			$this->Mpemesanan->reschedule($input,$id_pemesanan);
-			redirect('admin/riwayat','refresh');
+			echo "<script>alert('Data Berhasil Diubah!');</script>";
+			redirect('member/riwayat','refresh');
 		}
 		$this->load->view('member/template/Header',$data);
 		$this->load->view('member/reschedule', $data);

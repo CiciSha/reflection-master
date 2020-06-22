@@ -7,7 +7,7 @@
         <a href="<?php echo base_url("admin/home")?>">Beranda</a>
     </li>
     <li class="breadcrumb-item btn-link">
-        <a href="<?php echo base_url("admin/paket") ?>">Paket</a>
+        <a href="<?php echo base_url("admin/paket")?>">Paket</a>
 	</li>
 	 <li class="breadcrumb-item btn-link">
         <a href="<?php echo base_url("admin/paket/tampil_detail_paket/$paket[id_paket]") ?>">Detail Paket</a>

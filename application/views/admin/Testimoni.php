@@ -31,8 +31,7 @@
 					<a href="<?php 	echo base_url("admin/testimoni/Diterima/$value[id_testimoni]") ?>" class="btn btn-success">Diterima</a>
 					<a href="<?php 	echo base_url("admin/testimoni/Ditolak/$value[id_testimoni]") ?>" class="btn btn-danger">Ditolak</a>	
 					<?php endif ?>
-
-					</td>	
+				</td>	
 				</tr>	
 			<?php endforeach ?>
 		</tbody>

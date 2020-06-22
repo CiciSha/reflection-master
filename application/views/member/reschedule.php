@@ -7,6 +7,6 @@
 			<label>Reschedule</label>
 			<input type="date" class="form-control" name="tanggal_booking" value="<?php echo $pemesanan['tanggal_booking'] ?>">
 		</div>
-		<button class="btn btn-info">Submit</button> <br> <br>
+		<button class="btn btn-info">Simpan</button> <br> <br>
 	</form>
 </div>

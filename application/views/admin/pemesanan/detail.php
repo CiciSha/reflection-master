@@ -34,109 +34,118 @@
 				<td>
 					<?php if (empty($pemesanan['max_pose_pemesanan'])): ?>
 						<input type="" value="0" name="max_pose_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah Pose" style="width: 60%;">
-					<?php elseif($pemesanan['status_pemesanan']=="Selesai"): ?>
-						<input type="" readonly="" value="<?php echo $pemesanan['max_pose_pemesanan'] ?>" name="max_pose_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah Pose" style="width: 60%;">
-					<?php else: ?>
-						<input type="" value="<?php echo $pemesanan['max_pose_pemesanan'] ?>" name="max_pose_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah Pose" style="width: 60%;">
-					<?php endif ?>
-				</td>
-			</tr>
-			<tr>
-				<th>Tambah Jumlah File</th>
-				<th>:</th>
-				<td>
-					<?php if (empty($pemesanan['max_file_pemesanan'])): ?>
-						<input type="" value="0" name="max_file_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah File" style="width: 60%;">
-					<?php elseif($pemesanan['status_pemesanan']=="Selesai"): ?>
-						<input type="" readonly="" value="<?php echo $pemesanan['max_file_pemesanan'] ?>" name="max_file_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah File" style="width: 60%;">
-					<?php else: ?>
-						<input type="" value="<?php echo $pemesanan['max_file_pemesanan'] ?>" name="max_file_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah File" style="width: 60%;">
-					<?php endif ?>
-				</td>
-			</tr>
-			<tr>
-				<th>Total Yang Sudah Di Bayarkan</th>
-				<th>:</th>
-				<?php if ($pemesanan['status_pemesanan']=="Lunas" && !empty($pemesanan['total_tambahan'])): ?>
-					<td>Rp. <?php echo $pemesanan['total_bayar'] + $pemesanan['total_tambahan'] ?> (<?php echo $pemesanan['status_pemesanan'] ?>, dengan jenis pembayaran <?php echo $pembayaran['jenis_pembayaran'] ?>)</td>
-				<?php elseif($pemesanan['status_pemesanan']=="Cancel"): ?>
-					<td>Rp. 0 <?php echo $pemesanan['status_pemesanan'] ?></td>
-				<?php elseif( $pemesanan['status_pemesanan']=="Pending"): ?>
-					<td>Rp. 0 </td>
-				<?php elseif($pemesanan['status_pemesanan']=="DP"): ?>
-					<td>Rp. <?php echo $pembayaran['jumlah_bayar'] ?> (<?php echo $pemesanan['status_pemesanan'] ?>, dengan jenis pembayaran <?php echo $pembayaran['jenis_pembayaran'] ?>)</td>
-				<?php else: ?>
-					<td>Rp. <?php echo $pemesanan['total_bayar'] + $pemesanan['total_tambahan'] ?> (<?php echo $pemesanan['status_pemesanan'] ?>, dengan jenis pembayaran <?php echo $pembayaran['jenis_pembayaran'] ?>)</td>
-				<?php endif ?>
-			</td>
-		</tr>
-		<?php if ($pemesanan['status_pemesanan']!="Cancel"): ?>
-			<tr>
-				<th>Total Tagihan</th>
-				<th>:</th>
-				<td>
-					<?php if (empty($pemesanan['total_tambahan'])): ?>
-						<input type="" value="0" name="total_tagihan" class="form-control"  readonly="" style="width: 60%;">
-					<?php else: ?>
-						<input type="" value="<?php echo $pemesanan['total_tambahan'] ?>" name="total_tagihan" class="form-control"  readonly="" style="width: 60%;">
-					<?php endif ?>
-					<input type="" hidden="" name="harga_pose" value="<?php echo $pose['isi_pengaturan'] ?>">
-					<input type="" hidden="" name="harga_file" value="<?php echo $file['isi_pengaturan'] ?>">
-					<input type="" hidden="" name="" value="<?php echo $pemesanan['id_paket'] ?>">
-				</td>
-			</tr>
-			<tr>
-				<th>Total Tagihan Keseluruhan</th>
-				<th>:</th>
-				<td>
-					<?php if (empty($pemesanan['total_tambahan'])): ?>
-						<input type="" value="<?php echo 0 + $pemesanan['total_bayar'] ?>" name="" class="form-control"  readonly="" style="width: 60%;">
-					<?php else: ?>
-						<input type="" value="<?php echo $pemesanan['total_tambahan'] + $pemesanan['total_bayar'] ?>" name="total_tagihan" class="form-control"  readonly="" style="width: 60%;">
-					<?php endif ?>
-					<br>
-					<?php if ($pemesanan['status_pemesanan']!="Proses" && $pemesanan['status_pemesanan']=="Selesai"): ?>
-					<?php else: ?>
-						<button class="btn btn-info">Simpan</button>
-					<?php endif ?>
-					<input type="" hidden="" name="harga_pose" value="<?php echo $pose['isi_pengaturan'] ?>">
-					<input type="" hidden="" name="harga_file" value="<?php echo $file['isi_pengaturan'] ?>">
-					<input type="" hidden="" name="" value="<?php echo $pemesanan['id_paket'] ?>">
-				</td>
-			</tr>
-		</form>
-	<?php else: ?>
-		<!-- <a href="<?php //echo base_url("admin/pemesanan") ?>" class="btn btn-info">Kembali</a> -->
-	<?php endif ?>
-</table>
-<a href="<?php echo base_url("admin/pemesanan") ?>" class="btn btn-info">Kembali</a>
-<script>
-	$(document).ready(function(){
-		$("input[name=max_file_pemesanan]") .on('keyup', function(){
-			var pose = $("input[name=pose]").val();
-			var file = $("input[name=file]").val();
-			var tambah_file = $("input[name=max_file_pemesanan]").val();
-			var tambah_pose = $("input[name=max_pose_pemesanan]").val();
-			var id = $("input[name=id]").val();
-			var harga_pose = $("input[name=harga_pose]").val();
-			var harga_file = $("input[name=harga_file]").val();
-			if (tambah_pose !="" && tambah_file !="") 
-			{
-				var total_harga_pose = parseInt(tambah_pose)*parseInt(harga_pose);
-				var total_harga_file = parseInt(tambah_file)*parseInt(harga_file);
-				var total_tagihan = parseInt(total_harga_pose)+parseInt(total_harga_file);
-				$("input[name=total_tagihan]").val(total_tagihan);
-			}
-			else if (tambah_pose !="") 
-			{
-				var total_harga_pose = parseInt(tambah_pose)*parseInt(harga_pose);
-				$("input[name=total_tagihan]").val(total_harga_pose);
-			}
-			else if (tambah_file !="") 
-			{
-				var total_harga_file = parseInt(tambah_file)*parseInt(harga_file);
-				$("input[name=total_tagihan]").val(total_harga_file);
-			}
-		})
-	})
-</script>
+						<?php elseif($pemesanan['status_pemesanan']=="Selesai"): ?>
+							<input type="" readonly="" value="<?php echo $pemesanan['max_pose_pemesanan'] ?>" name="max_pose_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah Pose" style="width: 60%;">
+							<?php else: ?>
+								<input type="" value="<?php echo $pemesanan['max_pose_pemesanan'] ?>" name="max_pose_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah Pose" style="width: 60%;">
+							<?php endif ?>
+						</td>
+					</tr>
+					<tr>
+						<th>Tambah Jumlah File</th>
+						<th>:</th>
+						<td>
+							<?php if (empty($pemesanan['max_file_pemesanan'])): ?>
+								<input type="" value="0" name="max_file_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah File" style="width: 60%;">
+								<?php elseif($pemesanan['status_pemesanan']=="Selesai"): ?>
+									<input type="" readonly="" value="<?php echo $pemesanan['max_file_pemesanan'] ?>" name="max_file_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah File" style="width: 60%;">
+									<?php else: ?>
+										<input type="" value="<?php echo $pemesanan['max_file_pemesanan'] ?>" name="max_file_pemesanan" class="form-control" placeholder="Inputkan Tambahan Jumlah File" style="width: 60%;">
+									<?php endif ?>
+								</td>
+							</tr>
+							<tr>
+								<th>Harga Paket</th>
+								<th>:</th>
+								<td>Rp. <?php echo number_format($pemesanan['harga_tipe_paket']) ?></td>
+							</tr>
+							<tr>
+								<th>Jenis Pembayaran</th>
+								<th>:</th>
+								<?php if ($pemesanan['status_pemesanan']=="Lunas" && !empty($pemesanan['total_tambahan'])): ?>
+									<td>Rp. <?php echo $pemesanan['total_bayar'] + $pemesanan['total_tambahan'] ?> (<?php echo $pemesanan['status_pemesanan'] ?>, dengan jenis pembayaran <?php echo $pembayaran['jenis_pembayaran'] ?>)</td>
+									<?php elseif($pemesanan['status_pemesanan']=="Cancel"): ?>
+										<td>Rp. 0 <?php echo $pemesanan['status_pemesanan'] ?></td>
+										<?php elseif( $pemesanan['status_pemesanan']=="Pending"): ?>
+											<td>Rp. 0 </td>
+											<?php elseif($pemesanan['status_pemesanan']=="DP"): ?>
+												<td>Rp. <?php echo $pembayaran['jumlah_bayar'] ?> (<?php echo $pemesanan['status_pemesanan'] ?>, dengan jenis pembayaran <?php echo $pembayaran['jenis_pembayaran'] ?>)</td>
+												<?php else: ?>
+													<td>Rp. <?php echo $pemesanan['total_bayar'] + $pemesanan['total_tambahan'] ?> (<?php echo $pemesanan['status_pemesanan'] ?>, dengan jenis pembayaran <?php echo $pembayaran['jenis_pembayaran'] ?>)</td>
+												<?php endif ?>
+											</td>
+										</tr>
+										<?php if ($pemesanan['status_pemesanan']!="Cancel"): ?>
+											<tr>
+												<th class="text-danger">Total Tagihan Tambahan</th>
+												<th>:</th>
+												<td>
+													<?php if (empty($pemesanan['total_tambahan'])): ?>
+														<input type="" value="0" name="total_tagihan" class="form-control"  readonly="" style="width: 60%;">
+														<?php else: ?>
+															<input type="" value="<?php echo $pemesanan['total_tambahan'] ?>" name="total_tagihan" class="form-control"  readonly="" style="width: 60%;">
+														<?php endif ?>
+														<input type="" hidden="" name="harga_pose" value="<?php echo $pose['isi_pengaturan'] ?>">
+														<input type="" hidden="" name="harga_file" value="<?php echo $file['isi_pengaturan'] ?>">
+														<input type="" hidden="" name="" value="<?php echo $pemesanan['id_paket'] ?>">
+														<input type="" name="harga" hidden="" value="<?php echo $pemesanan['total_bayar']-$pembayaran['jumlah_bayar'] ?>">
+													</td>
+												</tr>
+												<tr>
+													<th>Total Tagihan Keseluruhan</th>
+													<th>:</th>
+													<td>
+														<?php if ($pemesanan['status_pemesanan']=="Proses"): ?>
+															<input type="" name="" readonly="" value="<?php echo $pembayaran['jumlah_bayar'] ?>">
+															<?php else: ?>
+																<input type="" name="total_tagihan_keseluruhan" width="60%" readonly="" class="form-control">
+															<?php endif ?>
+															<br><br>
+															<a href="<?php echo base_url("admin/pemesanan") ?>" class="btn btn-info">Kembali</a>
+															<button class="btn btn-success">Simpan</button>
+															<input type="" hidden="" name="harga_pose" value="<?php echo $pose['isi_pengaturan'] ?>">
+															<input type="" hidden="" name="harga_file" value="<?php echo $file['isi_pengaturan'] ?>">
+															<input type="" hidden="" name="" value="<?php echo $pemesanan['id_paket'] ?>">
+														</td>
+													</tr>
+												</form>
+												<?php else: ?>
+												<?php endif ?>
+											</table>
+											<script>
+												$(document).ready(function(){
+													$("input[name=max_file_pemesanan]") .on('keyup', function(){
+														var harga_bayar = $("input[name=harga]").val();
+														var pose = $("input[name=pose]").val();
+														var file = $("input[name=file]").val();
+														var tambah_file = $("input[name=max_file_pemesanan]").val();
+														var tambah_pose = $("input[name=max_pose_pemesanan]").val();
+														var id = $("input[name=id]").val();
+														var harga_pose = $("input[name=harga_pose]").val();
+														var harga_file = $("input[name=harga_file]").val();
+														if (tambah_pose !="" && tambah_file !="") 
+														{
+															var total_harga_pose = parseInt(tambah_pose)*parseInt(harga_pose);
+															var total_harga_file = parseInt(tambah_file)*parseInt(harga_file);
+															var total_tagihan = parseInt(total_harga_pose)+parseInt(total_harga_file);
+															var total_selesai = parseInt(total_tagihan)+parseInt(harga_bayar);
+															$("input[name=total_tagihan]").val(total_tagihan);
+															$("input[name=total_tagihan_keseluruhan").val(total_selesai);
+														}
+														else if (tambah_pose !="") 
+														{
+															var total_harga_pose = parseInt(tambah_pose)*parseInt(harga_pose);
+															var total_pose_selesai = parseInt(harga_bayar)+parseInt(total_harga_pose);
+															$("input[name=total_tagihan]").val(total_harga_pose);
+															$("input[name=total_tagihan_keseluruhan]").val(total_pose_selesai);
+														}
+														else if (tambah_file !="") 
+														{
+															var total_harga_file = parseInt(tambah_file)*parseInt(harga_file);
+															var total_file_selesai = parseInt(total_harga_file)+parseInt(harga_bayar);
+															$("input[name=total_tagihan_keseluruhan]").val(total_file_selesai);
+															$("input[name=total_tagihan]").val(total_harga_file);
+														}
+													})
+												})
+											</script>

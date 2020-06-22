@@ -1,6 +1,6 @@
-<div class="container"><br>
+<div class="container" style="margin-bottom: 10%;"><br>
 	<h3>Riwayat Pemesanan</h3><br>
-	<table class= "table table-hover">
+	<table class= "table table-hover" id="thetable">
 		<thead>
 			<tr>
 				<th>No</th>
@@ -44,4 +44,5 @@
 			<?php endforeach ?>
 		</tbody>
 	</table>
+	<span class="text-danger" style="font-size: 15px">**Tombol Reschedule akan muncul sebelum H-3!</span>
 </div>
